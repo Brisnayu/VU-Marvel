@@ -1,0 +1,21 @@
+@import './variables';
+
+footer {
+  background: $purple-primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 10px;
+  box-shadow: 0 0 5px $contrast-color;
+
+  a {
+    display: flex;
+    gap: 5px;
+    
+    img {
+      width: 20px;
+      filter: invert(100%);
+    }
+  }
+}
