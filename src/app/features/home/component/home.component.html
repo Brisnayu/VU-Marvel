@@ -1,0 +1,22 @@
+<main>
+  <section class="section-form">
+    <form [formGroup]="dataForm" appCardStyle (ngSubmit)="onSubmit()">
+      <fieldset>
+
+        <label for="private_key">PRIVATE KEY:</label>
+        <input type="text" formControlName="private_key" />
+
+        <label for="public_key">PUBLIC KEY:</label>
+        <input type="text" formControlName="public_key" />
+
+        <app-custom-button 
+        type="submit" 
+        buttonClass="button-form" 
+        textButton="Enviar" 
+        [disabled]="!dataForm.valid"
+        />
+
+      </fieldset>
+    </form>
+  </section>
+</main>
