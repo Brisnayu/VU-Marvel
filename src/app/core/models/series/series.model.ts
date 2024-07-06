@@ -8,3 +8,16 @@ export interface Series {
   thumbnail: string;
   comics: Comics;
 }
+
+export interface DataApi<T> {
+  code: number
+  status: string
+  data: {
+    results: T[]
+  }
+}
+
+export interface SeriesComics {
+  id: number;
+  title: string;
+}
