@@ -1,0 +1,19 @@
+@import 'variables';
+
+.container-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  gap: 1rem;
+
+  a {
+    border-bottom: 1.5px solid $contrast-color;
+    transition: zoom 0.5s ease-in-out;
+
+    &:hover {
+      color: $orange-light;
+    }
+  }
+}
