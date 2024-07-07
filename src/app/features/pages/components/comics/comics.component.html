@@ -2,7 +2,7 @@
   <app-loading></app-loading>
 
   <section *ngIf="listComics" class="container-page">
-    
+    <app-custom-button textButton="Go Back" buttonClass="button-form" appGoBack />
     <h2>Comics list</h2>
 
     <div *ngFor="let item of listComics" appCardStyle class="container-comics">
