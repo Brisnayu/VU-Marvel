@@ -12,9 +12,9 @@ export class CustomCardComponent {
   @Input() listMarvel: Series[] = [];
   @Input() page: string = '';
 
-  goToDetails(index: number) {
+  goToDetails(id: number) {
     if (this.page === 'series') {
-      this.router.navigate([`/series/${index}`])
+      this.router.navigate([`/series/${id}/comics`])
     } else {
       this.router.navigate([`home`])
     }

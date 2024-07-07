@@ -1,8 +1,7 @@
 import { Component, inject } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { SeriesComics } from '../../../../core/models/series/series.model';
 import { SeriesServices } from '../../../../core/services/seriesServices/series-services.service';
-import { Series, SeriesComics } from '../../../../core/models/series/series.model';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { LocalStorageService } from '../../../../core/services/localStorage/local-storage.service';
 
 @Component({
   selector: 'app-comics',
@@ -10,7 +9,7 @@ import { LocalStorageService } from '../../../../core/services/localStorage/loca
   styleUrl: './comics.component.scss'
 })
 export class ComicsComponent {
-
+  private router = inject(Router);
   private seriesService = inject(SeriesServices);
   private seriesId!: number;
   listComics: SeriesComics[] = [];
@@ -28,5 +27,9 @@ export class ComicsComponent {
 
     this.seriesService.getComicsOfSeries(this.seriesId).subscribe((data) => this.listComics = data)
       
+  }
+
+  goToDetails(id: number): void {
+    this.router.navigate([`/series/${this.seriesId}/comics/${id}`])
   }
 }

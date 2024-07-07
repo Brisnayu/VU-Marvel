@@ -1,7 +1,7 @@
 <section class="section-series">
-  <h2>Listado de {{ page }}</h2>
+  <h2>{{ page | capitalize }} list</h2>
 
-  <div class="container-list" *ngFor="let item of listMarvel, let i = index" appCardStyle>
+  <div class="container-list" *ngFor="let item of listMarvel" appCardStyle>
     <img [src]="item.thumbnail" />
     <div>
       <h3>Title: {{ item.title }}</h3>

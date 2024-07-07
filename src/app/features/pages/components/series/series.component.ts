@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SeriesServices } from '../../../../core/services/seriesServices/series-services.service';
 import { Series } from '../../../../core/models/series/series.model';
 
@@ -7,14 +7,11 @@ import { Series } from '../../../../core/models/series/series.model';
   templateUrl: './series.component.html',
   styleUrl: './series.component.scss'
 })
-export class SeriesComponent implements OnInit {
+export class SeriesComponent {
   private seriesService = inject(SeriesServices);
-  loading: boolean = true;
   listSeries: Series[] = [];
 
   ngOnInit(): void {
-
-    this.getLoading();
 
     this.seriesService.getSeries().subscribe(
       (series) => {
@@ -26,12 +23,4 @@ export class SeriesComponent implements OnInit {
       }
     );
   }
-
-  getLoading() {
-    this.loading = true;
-    setTimeout(() => {
-      this.loading = false;
-    }, 1000);
-  }
-
 }

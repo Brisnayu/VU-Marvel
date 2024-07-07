@@ -5,6 +5,7 @@ import { CustomButtonComponent } from './components/custom-button/custom-button.
 import { CardStyleDirective } from './directives/cardStyle/card-style.directive';
 import { CustomCardComponent } from './components/custom-card/custom-card.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     CardStyleDirective,
     CustomButtonComponent,
     CustomCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    CapitalizePipe
   ],
   imports: [
     CommonModule
@@ -23,7 +25,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     CardStyleDirective,
     CustomButtonComponent,
     CustomCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    CapitalizePipe
   ]
 })
 export class SharedModule { }

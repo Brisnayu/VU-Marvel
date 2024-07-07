@@ -1,11 +1,13 @@
 <main>
+  <app-loading></app-loading>
 
   <section *ngIf="listComics" class="container-page">
     
+    <h2>Comics list</h2>
 
     <div *ngFor="let item of listComics" appCardStyle class="container-comics">
       <p>{{ item.title }}</p>
-      <app-custom-button textButton="View details" buttonClass="button-form"/>
+      <app-custom-button textButton="View details" buttonClass="button-form" (click)="goToDetails(item.id)" />
     </div>
 
     <div *ngIf="listComics.length === 0">

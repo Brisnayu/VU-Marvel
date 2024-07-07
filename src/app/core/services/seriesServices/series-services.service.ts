@@ -39,11 +39,8 @@ export class SeriesServices {
   getComicsOfSeries(id: number): Observable<SeriesComics[]> {
     const apiUrl2 = `${environmentDevelop.UrlMarvel}v1/public/series/${id}/comics?ts=1&apikey=${this.publicKey}&hash=${this.marvelHash}`;
 
-    const prueba = this.http.get<DataApi<SeriesComics>>(apiUrl2).pipe(
+    return this.http.get<DataApi<SeriesComics>>(apiUrl2).pipe(
       map(apiSeriesResponse => apiSeriesResponse.data.results)
     );
-
-    console.log("Services", prueba);
-    return prueba;
   }
 }
