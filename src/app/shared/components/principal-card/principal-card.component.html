@@ -1,0 +1,17 @@
+<section class="section-series">
+  <div class="container-list" appCardStyle>
+    <img [src]="imageCard" [alt]="titlePrincipal" />
+    <div>
+      <h3>Title: {{ titlePrincipal }}</h3>
+      <p>{{ firstInformation }}</p>
+      <p>{{ secondInformation }}</p>
+      <p>{{ dateInformation | date }}</p>
+      
+      <app-custom-button *ngIf="viewButton"
+        [textButton]="textButton"
+        buttonClass="button-form"
+        (click)="onButtonClick()"
+      ></app-custom-button>
+    </div>
+  </div>
+</section>

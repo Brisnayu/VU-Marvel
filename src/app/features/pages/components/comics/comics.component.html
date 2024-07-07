@@ -5,13 +5,16 @@
     <app-custom-button textButton="Go Back" buttonClass="button-form" appGoBack />
     <h2>Comics list</h2>
 
-    <div *ngFor="let item of listComics" appCardStyle class="container-comics">
-      <p>{{ item.title }}</p>
-      <app-custom-button textButton="View details" buttonClass="button-form" (click)="goToDetails(item.id)" />
-    </div>
+    <app-principal-card *ngFor="let item of listComics"
+      [titlePrincipal]="item.title"
+      [imageCard]="item.thumbnail" 
+      [dateInformation]="item.modified"
+      textButton="View details"
+      (buttonClicked)="goToDetails(item.id)"
+    />
 
     <div *ngIf="listComics.length === 0">
-      <p>LISTADO VACÍO</p>
+      <p>For now there is no list of comics from the selected series.</p>
     </div>
   </section>
 

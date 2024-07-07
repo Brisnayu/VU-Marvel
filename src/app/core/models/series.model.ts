@@ -10,9 +10,21 @@ export interface ApiResultSeries {
   comics: SeriesComics;
 }
 
+export interface ApiSeriesComics {
+  id: number;
+  title: string;
+  modified: string;
+  thumbnail: {
+    path: string;
+    extension: string;
+  }
+}
+
 export interface SeriesComics {
   id: number;
   title: string;
+  modified: string;
+  thumbnail: string;
 }
 
 export interface Series {
