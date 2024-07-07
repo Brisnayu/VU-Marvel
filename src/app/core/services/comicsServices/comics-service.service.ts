@@ -6,6 +6,7 @@ import { map, Observable } from 'rxjs';
 
 import { ApiResultComics, Comics } from '../../models/comics.model';
 import { transformApiComicsResponse } from '../../helpers/comics.helpers';
+import { ApiResponse } from '../../models/apiResponse.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class ComicsServiceService {
   getComicsById(id: number): Observable<Comics[]> {
     const apiComics = `${environmentDevelop.UrlMarvel}v1/public/comics/${id}?ts=1&apikey=${this.publicKey}&hash=${this.marvelHash}`;
 
-    return this.http.get<ApiResultComics>(apiComics).pipe(
+    return this.http.get<ApiResponse<ApiResultComics>>(apiComics, this.getHttpOptions()).pipe(
       map(apiComicsResponse => transformApiComicsResponse(apiComicsResponse))
     );
   }

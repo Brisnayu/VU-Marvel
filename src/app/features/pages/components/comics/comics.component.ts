@@ -20,10 +20,8 @@ export class ComicsComponent implements OnInit {
 
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.seriesId = Number(params.get('id'));
-      console.log(this.seriesId); 
+      // console.log(this.seriesId); 
     });
-
-    console.log(this.seriesId)
 
     this.seriesService.getComicsOfSeries(this.seriesId).subscribe((data) => this.listComics = data)
       

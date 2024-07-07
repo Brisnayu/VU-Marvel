@@ -1,6 +1,8 @@
 import { Component, inject, Input } from '@angular/core';
-import { Series } from '../../../core/models/series.model';
+import { Series, SeriesComics } from '../../../core/models/series.model';
 import { Router } from '@angular/router';
+
+type MarvelItem = Series | SeriesComics;
 
 @Component({
   selector: 'app-custom-card',
@@ -9,13 +11,12 @@ import { Router } from '@angular/router';
 })
 export class CustomCardComponent {
   private router = inject(Router);
-  @Input() listMarvel: Series[] = [];
+  @Input() listMarvel: MarvelItem[] = [];
   @Input() page: string = '';
 
   goToDetails(id: number) {
     if (this.page === 'series') {
       this.router.navigate([`/series/${id}/comics`])
     }
-
   }
 }

@@ -1,18 +1,18 @@
 <section class="section-series">
-  <h2>{{ page | capitalize }} list</h2>
+  <h2>{{ page | capitalize }} List</h2>
 
   <div class="container-list" *ngFor="let item of listMarvel" appCardStyle>
-    <img [src]="item.thumbnail" />
+    <img [src]="item.thumbnail" alt="Thumbnail" />
     <div>
       <h3>Title: {{ item.title }}</h3>
-      <p>Start year: {{ item.startYear }}</p>
-      <p>End year: {{ item.endYear }}</p>
+      <!-- <p>Start year: {{ item.startYear }}</p>
+      <p>End year: {{ item.endYear }}</p> -->
 
       <app-custom-button 
-      textButton="Go Comics"
-      buttonClass="button-form"
-      (click)="goToDetails(item.id)"
-    />
+        textButton="Details"
+        buttonClass="button-form"
+        (click)="goToDetails(item.id)"
+      ></app-custom-button>
     </div>
   </div>
 </section>
