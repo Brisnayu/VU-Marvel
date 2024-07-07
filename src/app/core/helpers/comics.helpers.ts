@@ -1,16 +1,18 @@
-import { ApiResponse } from "../models/apiResponse.model"
-import { ApiResultComics, Comics } from "../models/comics.model"
+import { ApiResponse } from "../models/apiResponse.model";
+import { ApiResultComics, Comics } from "../models/comics.model";
 
-export function transformApiComicsResponse(apiComicsResponse: ApiResponse<ApiResultComics>): Comics[] {
-  return apiComicsResponse.data.results.map((apiComics) => transformApiComics(apiComics))
-}
+export class ComicsTransformer {
+  public transformApiComicsResponse(apiComicsResponse: ApiResponse<ApiResultComics>): Comics[] {
+    return apiComicsResponse.data.results.map((apiComics) => this.transformApiComics(apiComics));
+  }
 
-export function transformApiComics(ApiResultComics: ApiResultComics): Comics {
-  return {
-    id: ApiResultComics.id,
-    title: ApiResultComics.title,
-    description: ApiResultComics.description,
-    modified: ApiResultComics.modified,
-    thumbnail: `${ApiResultComics.thumbnail.path}.${ApiResultComics.thumbnail.extension}`,
+  private transformApiComics(apiResultComics: ApiResultComics): Comics {
+    return {
+      id: apiResultComics.id,
+      title: apiResultComics.title,
+      description: apiResultComics.description,
+      modified: apiResultComics.modified,
+      thumbnail: `${apiResultComics.thumbnail.path}.${apiResultComics.thumbnail.extension}`,
+    };
   }
 }
