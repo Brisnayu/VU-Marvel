@@ -1,3 +1,15 @@
 <main>
-  <h1>hola</h1>
+  <app-loading></app-loading>
+  <app-custom-button textButton="Go Back" buttonClass="button-form" appGoBack />
+
+  <h2>Detail comic</h2>
+
+  <div *ngFor="let item of detailsComics" class="container-comics" appCardStyle>
+    <img [src]="item.thumbnail" alt="image comics" />
+    <div>
+      <h1>{{ item.title }}</h1>
+      <p>{{ item.description }}</p>
+      <p>{{ item.modified | date:"dd/mm/yyyy" }}</p>
+    </div>
+  </div>
 </main>

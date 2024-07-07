@@ -1,0 +1,28 @@
+main {
+  padding: 1rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.container-comics {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 10rem;
+    height: 15rem;
+    object-fit: cover;
+    padding: 1rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+
+}

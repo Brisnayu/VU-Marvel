@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { SeriesComics } from '../../../../core/models/series/series.model';
+import { SeriesComics } from '../../../../core/models/series.model';
 import { SeriesServices } from '../../../../core/services/seriesServices/series-services.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { SeriesServices } from '../../../../core/services/seriesServices/series-
   templateUrl: './comics.component.html',
   styleUrl: './comics.component.scss'
 })
-export class ComicsComponent {
+export class ComicsComponent implements OnInit {
   private router = inject(Router);
   private seriesService = inject(SeriesServices);
   private seriesId!: number;

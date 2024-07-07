@@ -1,5 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { Series } from '../../../core/models/series/series.model';
+import { Series } from '../../../core/models/series.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,8 +15,6 @@ export class CustomCardComponent {
   goToDetails(id: number) {
     if (this.page === 'series') {
       this.router.navigate([`/series/${id}/comics`])
-    } else {
-      this.router.navigate([`home`])
     }
 
   }

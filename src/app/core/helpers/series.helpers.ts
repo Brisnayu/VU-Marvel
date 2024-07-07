@@ -1,7 +1,8 @@
-import { ApiResultSeries, ApiSeriesResponse } from "../models/series/api-series.model";
-import { Series } from "../models/series/series.model";
+import { ApiResponse } from "../models/apiResponse.model"
+import { ApiResultSeries, Series } from "../models/series.model"
 
-export function transformApiSeriesResponse(apiSeriesResponse: ApiSeriesResponse): Series[] {
+
+export function transformApiSeriesResponse(apiSeriesResponse: ApiResponse<ApiResultSeries>): Series[] {
   return apiSeriesResponse.data.results.map((apiSeries) => transformApiSeries(apiSeries))
 }
 
