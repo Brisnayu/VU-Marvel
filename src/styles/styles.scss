@@ -7,13 +7,17 @@
   text-decoration: none;
   list-style: none;
   color: inherit;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: $text-white;
 }
 
 main {
   min-height: 80vh;
   background: $purple-primary;
+  padding: 1rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 ul,
