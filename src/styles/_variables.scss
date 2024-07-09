@@ -12,3 +12,26 @@ $text-white: whitesmoke;
 // GRADIENT
 $gradient-primary: linear-gradient(45deg, $purple-primary 20%, $vine-light 79%);
 $gradient-secondary: linear-gradient(45deg, $vine-light 30%, $orange-light 71%);
+
+// DARK AND LIGHT MODE
+$light-mode-colors: (
+  header-bg-color: $purple-primary,
+  header-text-color: $text-white,
+
+  main-bg-color: $purple-primary,
+  main-text-color: $text-white,
+
+  footer-bg-color: $purple-primary,
+  footer-text-color: $text-white,
+);
+
+$dark-mode-colors: (
+    header-bg-color: $vine-dark,
+    header-text-color: $text-white,
+
+    main-bg-color: $vine-dark,
+    main-text-color: $text-white,
+
+    footer-bg-color: $vine-dark,
+    footer-text-color: $text-white,
+);

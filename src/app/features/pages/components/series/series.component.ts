@@ -26,8 +26,6 @@ export class SeriesComponent implements OnInit {
   }
 
   goToListComics(id: number) {
-
-      this.router.navigate([`/series/${id}/comics`])
-    
+    this.router.navigate([`/series/${id}/comics`])
   }
 }

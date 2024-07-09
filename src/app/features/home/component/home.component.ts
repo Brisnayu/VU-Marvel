@@ -28,8 +28,9 @@ export class HomeComponent {
     const formData = this.dataForm.value;
     console.log('INFO: ', formData);
     const hash = Md5.hashStr(this.ts + formData.private_key + formData.public_key);
-    this.localStorageService.setItem('MarvelHash', hash);
-    this.localStorageService.setItem('Public_key', formData.public_key);
+    this.localStorageService.setItem('hash', hash);
+    this.localStorageService.setItem('public_key', formData.public_key);
+    alert("Guardando datos!")
 
     this.router.navigate(['series'])
   }

@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixin';
 
 * {
   margin: 0;
@@ -12,7 +13,7 @@
 }
 
 main {
-  min-height: 80vh;
+  min-height: 70vh;
   background: $purple-primary;
   padding: 1rem 5rem;
   display: flex;
@@ -47,4 +48,12 @@ fieldset {
   border: none;
   margin: 0;
   padding: 0;
+}
+
+* .light-mode {
+  @include theme($light-mode-colors)
+}
+
+* .dark-mode {
+  @include theme($dark-mode-colors)
 }
