@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ComicsServiceService } from '../../../../core/services/comicsServices/comics-service.service';
 import { Comics } from '../../../../core/models/comics.model';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,6 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   styleUrl: './comics-details.component.scss'
 })
 export class ComicsDetailsComponent implements OnInit {
-  private router = inject(Router);
   private comicsServices = inject(ComicsServiceService);
   private comicId!: number;
 

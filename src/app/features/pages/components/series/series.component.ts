@@ -17,7 +17,6 @@ export class SeriesComponent implements OnInit {
     this.seriesService.getSeries().subscribe(
       (series) => {
         this.listSeries = series;
-        // console.log(this.listSeries);
       },
       (error) => {
         console.error('Error al obtener las series:', error);
