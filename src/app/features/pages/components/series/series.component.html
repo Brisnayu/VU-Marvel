@@ -1,17 +1,15 @@
 <main>
-  <app-loading></app-loading>
-
   <app-custom-button textButton="Go Back" buttonClass="button-form" appGoBack />
 
   <h2>Series list</h2>
 
-  <app-principal-card *ngFor="let item of listSeries"
-      [titlePrincipal]="item.title"
-      [imageCard]="item.thumbnail" 
-      [firstInformation]="'Start year: ' + item.startYear"
-      [secondInformation]="'End year: ' + item.endYear"
-      textButton="Details"
-      (buttonClicked)="goToListComics(item.id)"
-    />
-  
+  <app-principal-card *ngFor="let item of listSeries" 
+    [titlePrincipal]="item.title" 
+    [imageCard]="item.thumbnail"
+    [firstInformation]="'Start year: ' + item.startYear" 
+    [secondInformation]="'End year: ' + item.endYear"
+    textButton="Details" 
+    (buttonClicked)="goToListComics(item.id)" 
+  />
+
 </main>
