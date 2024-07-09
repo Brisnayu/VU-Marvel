@@ -4,11 +4,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 77vh;
 
   form {
     width: 20rem;
-    height: 60%;
+    height: 80%;
+    border: 1px solid yellow;
 
     fieldset {
       width: 100%;
@@ -22,6 +23,7 @@
       input {
         padding-left: 10px;
         color: red;
+        width: 80%;
       }
 
       .error {
