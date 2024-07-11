@@ -5,7 +5,7 @@ import { Directive, HostListener, inject } from '@angular/core';
   selector: '[appGoBack]'
 })
 export class GoBackDirective {
-  private location = inject(Location);
+  constructor(private location: Location) {}
 
   @HostListener('click') onClick(): void {
     this.location.back();

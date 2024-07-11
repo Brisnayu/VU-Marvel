@@ -5,30 +5,6 @@ describe('LocalStorageService', () => {
   let service: LocalStorageService;
 
   beforeEach(() => {
-    let store: { [key: string]: string } = {};
-
-    const mockLocalStorage = {
-      getItem: (key: string): string | null => {
-        return store[key] || null;
-      },
-      setItem: (key: string, value: string) => {
-        store[key] = `${value}`;
-      },
-      removeItem: (key: string) => {
-        delete store[key];
-      },
-      clear: () => {
-        store = {};
-      }
-    };
-
-    spyOn(mockLocalStorage, 'getItem').and.callThrough();
-    spyOn(mockLocalStorage, 'setItem').and.callThrough();
-    spyOn(mockLocalStorage, 'removeItem').and.callThrough();
-    spyOn(mockLocalStorage, 'clear').and.callThrough();
-
-    Object.defineProperty(window, 'localStorage', { value: mockLocalStorage });
-
     TestBed.configureTestingModule({
       providers: [LocalStorageService]
     });
