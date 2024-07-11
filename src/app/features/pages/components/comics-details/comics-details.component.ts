@@ -18,13 +18,20 @@ export class ComicsDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getIdComic();
+    this.getDetailsComic(this.comicId)
+  }
+
+  getIdComic() {
     this.route.url.subscribe(urlSegments => {
       const lastSegment = urlSegments[urlSegments.length - 1];
       this.comicId = Number(lastSegment.path);
       console.log(this.comicId);
     });
+  }
 
-    this.comicsServices.getComicsById(this.comicId).subscribe((comics) => {
+  getDetailsComic(id: number) {
+    this.comicsServices.getComicsById(id).subscribe((comics) => {
       this.detailsComics = comics;
       console.log(this.detailsComics)
     })
