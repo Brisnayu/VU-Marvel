@@ -20,4 +20,15 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render text', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('p')?.textContent).toContain('Creado con amor por Brisna A. Paez M.');
+  });
+
+  it('should display the email icon', () => {
+    const img = document.querySelector('img');
+    expect(img).toBeTruthy();
+    expect(img?.alt).toContain('icon email');
+  });
 });
