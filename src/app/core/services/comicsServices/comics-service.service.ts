@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environmentDevelop } from '../../../../environments/environment.development';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { ApiResultComics, Comics } from '../../models/comics.model';
 import { ApiResponse } from '../../models/apiResponse.model';
 import { ComicsTransformer } from '../../helpers/comics.helpers';
@@ -28,7 +28,11 @@ export class ComicsServiceService {
     const apiComics = `${environmentDevelop.UrlMarvel}comics/${id}`;
 
     return this.http.get<ApiResponse<ApiResultComics>>(apiComics, this.getHttpOptions()).pipe(
-      map(apiComicsResponse => this.transformer.transformApiComicsResponse(apiComicsResponse))
+      map(apiComicsResponse => this.transformer.transformApiComicsResponse(apiComicsResponse)),
+      catchError(error => {
+        console.error('Error HTTP: ', error);
+        return throwError(() => error);
+      }) 
     );
   }
 }

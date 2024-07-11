@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environmentDevelop } from '../../../../environments/environment.development';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 import { ApiResultSeries, ApiSeriesComics, Series, SeriesComics } from '../../models/series.model';
 import { ApiResponse } from '../../models/apiResponse.model';
@@ -29,7 +29,11 @@ export class SeriesServices {
 
   getSeries(): Observable<Series[]> {
     return this.http.get<ApiResponse<ApiResultSeries>>(this.apiUrl, this.getHttpOptions()).pipe(
-      map(apiSeriesResponse => this.transformer.transformApiSeriesResponse(apiSeriesResponse))
+      map(apiSeriesResponse => this.transformer.transformApiSeriesResponse(apiSeriesResponse)),
+      catchError(error => {
+        console.error('Error HTTP: ', error);
+        return throwError(() => error);
+      }) 
     );
   }
 
@@ -37,7 +41,11 @@ export class SeriesServices {
     const apiUrl2 = `${environmentDevelop.UrlMarvel}series/${id}/comics`;
 
     return this.http.get<ApiResponse<ApiSeriesComics>>(apiUrl2, this.getHttpOptions()).pipe(
-      map(apiResponse => this.transformer.transformApiSeriesComicsResponse(apiResponse))
+      map(apiResponse => this.transformer.transformApiSeriesComicsResponse(apiResponse)),
+      catchError(error => {
+        console.error('Error HTTP: ', error);
+        return throwError(() => error);
+      })
     );
   }
 }
