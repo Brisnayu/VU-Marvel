@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { LoadingService } from './core/services/loadingService/loading.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { LoadingService } from './core/services/loadingService/loading.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit, AfterViewChecked {
   title = 'examenMarvel';
 
   isLoading: boolean = false;
@@ -24,8 +24,9 @@ export class AppComponent {
   cambiado, actualiza el valor y llama a detectChanges en el ChangeDetectorRef para forzar que
   se detecten los cambios */
   ngAfterViewChecked(): void {
-    if (this.isLoading !== this.loadService.isLoading) {
+    if (this.cdRef && this.isLoading !== this.loadService.isLoading) {
       this.isLoading = this.loadService.isLoading;
+      console.log("hola?")
       this.cdRef.detectChanges();
     }
   } 

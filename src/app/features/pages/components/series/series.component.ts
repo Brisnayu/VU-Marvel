@@ -14,14 +14,11 @@ export class SeriesComponent implements OnInit {
   listSeries: Series[] = [];
 
   ngOnInit(): void {
-    this.seriesService.getSeries().subscribe(
-      (series) => {
-        this.listSeries = series;
-      },
-      (error) => {
-        console.error('Error al obtener las series:', error);
-      }
-    );
+    this.getSeries();
+  }
+
+  getSeries() {
+    this.seriesService.getSeries().subscribe((series) => this.listSeries = series)
   }
 
   goToListComics(id: number) {
