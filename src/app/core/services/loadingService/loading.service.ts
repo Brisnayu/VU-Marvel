@@ -1,21 +1,20 @@
-import { HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class LoadingService {
-  #showLoader = false;
+  valueLoader = false;
+
   showLoader() {
-    this.#showLoader = true;
+    this.valueLoader = true;
   }
   hideLoader() {
-    this.#showLoader = false;
+    this.valueLoader = false;
   }
   get isLoading() {
-    return this.#showLoader;
+    return this.valueLoader;
   }
 }
 

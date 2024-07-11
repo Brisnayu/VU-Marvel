@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrincipalCardComponent } from './principal-card.component';
+import { CustomButtonComponent } from '../custom-button/custom-button.component';
 
 describe('PrincipalCardComponent', () => {
   let component: PrincipalCardComponent;
@@ -8,7 +9,7 @@ describe('PrincipalCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PrincipalCardComponent]
+      declarations: [PrincipalCardComponent, CustomButtonComponent]
     })
     .compileComponents();
     

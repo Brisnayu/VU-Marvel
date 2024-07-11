@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../../../../styles/styles.scss';
 
 .section-form {
   display: flex;
@@ -9,7 +9,7 @@
   form {
     width: 20rem;
     height: 80%;
-    border: 1px solid yellow;
+    border: 1px solid $contrast-color;
 
     fieldset {
       width: 100%;
@@ -22,7 +22,7 @@
 
       input {
         padding-left: 10px;
-        color: red;
+        color: $red-color;
         width: 80%;
       }
 
