@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LocalStorageService } from '../../../core/services/localStorage/local-storage.service';
 import { Md5 } from 'ts-md5';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   private infoApiMarvel = inject(FormBuilder);
   private localStorageService = inject(LocalStorageService);
   private router = inject(Router);
