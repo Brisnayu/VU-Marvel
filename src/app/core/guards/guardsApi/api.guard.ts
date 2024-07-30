@@ -19,4 +19,3 @@ export const apiGuard: CanActivateFn = () => {
     })
   )
 };
-// GUARD SERIES

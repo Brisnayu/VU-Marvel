@@ -22,7 +22,7 @@ export class ComicsComponent implements OnInit {
       this.seriesId = Number(params.get('id'));
     });
 
-    this.seriesService.getComicsOfSeries(this.seriesId).subscribe((data) => this.listComics = data)
+    this.seriesService.getComicsOfSeries(this.seriesId).subscribe((data) => {this.listComics = data})
   }
 
   goToDetails(id: number): void {

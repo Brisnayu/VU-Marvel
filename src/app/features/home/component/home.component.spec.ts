@@ -10,8 +10,8 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CustomButtonComponent, HomeComponent],
       imports: [ReactiveFormsModule]
+      declarations: [CustomButtonComponent, HomeComponent],
     })
       .compileComponents();
 

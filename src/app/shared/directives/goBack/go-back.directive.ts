@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Directive, HostListener, inject } from '@angular/core';
+import { Directive, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appGoBack]'
